@@ -1,0 +1,38 @@
+﻿@page "{Id:Int?}"
+@model RegistroEstudiantes.Pages.Materias.EditarModel
+@{
+}
+
+ Esta editando la materia  
+<h2>@Model.Materia.Nombre </h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Materia.Id" />
+
+    <div class="form-group">
+        <label asp-for="Materia.Nombre">Nombre</label>
+        <input type="text" class="form-control" asp-for="Materia.Nombre" />
+        <span class="text-danger" asp-validation-for="Materia.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Materia.Codigo">Codigo</label>
+        <input type="text" class="form-control" asp-for="Materia.Codigo" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Materia.Area">Area</label>
+        <select asp-for="Materia.Area" class="form-control" asp-items="@Model.Areas">
+        </select>       
+    </div>
+    <div class="form-group">
+        <label asp-for="Materia.Objetivos">Objetivos</label>
+        <textarea asp-for="Materia.Objetivos" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Materia.Disponible">Disponible</label>
+        <input asp-for="Materia.Disponible" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+
+</form>

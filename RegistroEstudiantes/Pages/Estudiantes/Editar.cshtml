@@ -1,0 +1,61 @@
+﻿@page "{Id:Int?}"
+@model RegistroEstudiantes.Pages.Estudiantes.EditarModel
+@{
+    ViewData["Title"] = "Editar";
+}
+
+Esta Editando el Estudiante
+<h2> @Model.Estudiante.Nombre</h2>
+
+<form method="post">
+    <input type="hidden" asp-for="Estudiante.Id" />
+
+
+
+    <div class="form-group">
+        <label asp-for="Estudiante.Nombre">Nombre:</label>
+        <input class=" form-control" asp-for="Estudiante.Nombre" />
+        <span typeof="text-danger" asp-validation-for="Estudiante.Nombre"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Estudiante.Apellido">Apellido::</label>
+        <input class=" form-control" asp-for="Estudiante.Apellido" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Estudiante.Edad">Edad:</label>
+        <input class=" form-control" asp-for="Estudiante.Edad" />
+        <span typeof="text-danger" asp-validation-for="Estudiante.Edad"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Estudiante.Matricula">Matricula:</label>
+        <input class=" form-control" asp-for="Estudiante.Matricula" />
+        <span typeof="text-danger" asp-validation-for="Estudiante.Matricula"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Estudiante.FechaNac">Fecha de Nacimiento:</label>
+        <input type="date" class=" form-control" asp-for="Estudiante.FechaNac">
+        <span typeof="text-danger" asp-validation-for="Estudiante.FechaNac"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Estudiante.Carrera">Carrera:</label>
+        <select asp-for="Estudiante.Carrera" class="form-control" asp-items="Model.Carreras">
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label asp-for="Estudiante.Meta">Meta</label>
+        <textarea asp-for="Estudiante.Meta" class="form-control"></textarea>
+        <span typeof="text-danger" asp-validation-for="Estudiante.Meta"></span>
+    </div>
+    <div>
+        <label asp-for="Estudiante.Sexo"></label>
+        <select asp-for="Estudiante.Sexo" class="form-control" asp-items="Model.Sexos">
+        </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-success">Guardar Cambios</button>
+</form>

@@ -1,0 +1,55 @@
+﻿@page "{Id:int}"
+@model RegistroEstudiantes.Pages.Estudiantes.DetalleEstudianteModel
+@{
+    ViewData["Title"] = "DetalleEstudiante";
+}
+
+@if (!string.IsNullOrEmpty(Model.Mensaje))
+
+{
+    <div class="alert alert-success" role="alert">
+        @Model.Mensaje
+    </div>
+    <br />
+    <br />
+}
+
+<h2>@Model.Estudiante.Nombre @Model.Estudiante.Apellido</h2>
+
+<div>
+    <label style="font-weight:bold">Id:</label>
+    <br />
+    @Model.Estudiante.Id
+</div>
+
+<div>
+    <label style="font-weight:bold">Matricula:</label>
+    <br />
+    @Model.Estudiante.Matricula
+</div>
+
+<div>
+    <label style="font-weight:bold">Carrera:</label>
+    <br />
+    @Model.Estudiante.Carrera
+</div>
+
+<div>
+    <label style="font-weight:bold">Edad:</label>
+    <br />
+    @Model.Estudiante.Edad
+</div>
+
+<div>
+    <label style="font-weight:bold">Meta:</label>
+    <br />
+    @Model.Estudiante.Meta
+</div>
+
+<div>
+    <label style="font-weight:bold">Sexo:</label>
+    <br />
+    @Model.Estudiante.Sexo
+</div>
+
+<a class="btn btn-primary" asp-page="./RegistrodeEstudiantes">Volver a Consultar</a>
