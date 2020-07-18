@@ -48,6 +48,11 @@ namespace RegistroEstudiantes.Data
             return estudiante;
         }
 
+        public Estudiante Eliminar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Estudiante GetEstudiantesPorId(int Id)
         {
             return this.Estudiantes.SingleOrDefault(n => n.Id == Id);
@@ -60,6 +65,11 @@ namespace RegistroEstudiantes.Data
                 texto = texto.ToLower();
             }
             return Estudiantes.Where(e => string.IsNullOrEmpty(texto) || e.Nombre.ToLower().Contains(texto)).OrderBy(e => e.Nombre).ToList();
+        }
+
+        public object GetTotalEstudaintesRegistrados()
+        {
+            throw new NotImplementedException();
         }
 
         public int GuardarCambios()

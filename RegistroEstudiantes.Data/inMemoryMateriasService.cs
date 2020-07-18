@@ -44,6 +44,11 @@ namespace RegistroEstudiantes.Data
             return materia;
         }
 
+        public Materia Eliminar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public Materia GetMateriaPorId(int Id)
         {
             return this.materias.SingleOrDefault(d => d.Id == Id);
@@ -57,6 +62,11 @@ namespace RegistroEstudiantes.Data
             }
           
             return materias.Where(m => string.IsNullOrEmpty(texto) || m.Nombre.ToLower().Contains(texto)).OrderBy(m => m.Nombre).ToList();
+        }
+
+        public object GetTotalMateriasRegistradas()
+        {
+            throw new NotImplementedException();
         }
 
         public int GuardarCambios()

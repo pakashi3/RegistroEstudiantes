@@ -14,42 +14,44 @@
     <br />
 }
 
-<h2>@Model.Estudiante.Nombre @Model.Estudiante.Apellido</h2>
+<partial name="_ResumenEstudiante" model="@Model.Estudiante" />
 
-<div>
-    <label style="font-weight:bold">Id:</label>
-    <br />
-    @Model.Estudiante.Id
-</div>
+@*<h2>@Model.Estudiante.Nombre @Model.Estudiante.Apellido</h2>
 
-<div>
-    <label style="font-weight:bold">Matricula:</label>
-    <br />
-    @Model.Estudiante.Matricula
-</div>
+    <div>
+        <label style="font-weight:bold">Id:</label>
+        <br />
+        @Model.Estudiante.Id
+    </div>
 
-<div>
-    <label style="font-weight:bold">Carrera:</label>
-    <br />
-    @Model.Estudiante.Carrera
-</div>
+    <div>
+        <label style="font-weight:bold">Matricula:</label>
+        <br />
+        @Model.Estudiante.Matricula
+    </div>
 
-<div>
-    <label style="font-weight:bold">Edad:</label>
-    <br />
-    @Model.Estudiante.Edad
-</div>
+    <div>
+        <label style="font-weight:bold">Carrera:</label>
+        <br />
+        @Model.Estudiante.Carrera
+    </div>
 
-<div>
-    <label style="font-weight:bold">Meta:</label>
-    <br />
-    @Model.Estudiante.Meta
-</div>
+    <div>
+        <label style="font-weight:bold">Edad:</label>
+        <br />
+        @Model.Estudiante.Edad
+    </div>
 
-<div>
-    <label style="font-weight:bold">Sexo:</label>
-    <br />
-    @Model.Estudiante.Sexo
-</div>
+    <div>
+        <label style="font-weight:bold">Meta:</label>
+        <br />
+        @Model.Estudiante.Meta
+    </div>
+
+    <div>
+        <label style="font-weight:bold">Sexo:</label>
+        <br />
+        @Model.Estudiante.Sexo
+    </div>*@
 
 <a class="btn btn-primary" asp-page="./RegistrodeEstudiantes">Volver a Consultar</a>

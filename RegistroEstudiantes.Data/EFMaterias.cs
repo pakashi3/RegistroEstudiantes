@@ -32,6 +32,13 @@ namespace RegistroEstudiantes.Data
             return materia;
         }
 
+        public Materia Eliminar(int id)
+        {
+            var materia = db.Materias.Single(m => m.Id == id);
+            db.Materias.Remove(materia);
+            return materia;
+        }
+
         public Materia GetMateriaPorId(int Id)
         {
             return this.db.Materias.SingleOrDefault(d => d.Id == Id);
@@ -45,6 +52,11 @@ namespace RegistroEstudiantes.Data
             }
 
             return db.Materias.Where(m => string.IsNullOrEmpty(texto) || m.Nombre.ToLower().Contains(texto)).OrderBy(m => m.Nombre).ToList();
+        }
+
+        public object GetTotalMateriasRegistradas()
+        {
+           return db.Materias.Count();
         }
 
         public int GuardarCambios()

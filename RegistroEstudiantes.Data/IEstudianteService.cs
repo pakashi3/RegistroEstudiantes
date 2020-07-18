@@ -14,6 +14,8 @@ namespace RegistroEstudiantes.Data
         Estudiante CrearEstudiante(Estudiante estudiante);
 
         int GuardarCambios();
+        Estudiante Eliminar(int id);
+        object GetTotalEstudaintesRegistrados();
     }
 }
 

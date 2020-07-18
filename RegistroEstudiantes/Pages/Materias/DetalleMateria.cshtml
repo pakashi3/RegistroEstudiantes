@@ -1,51 +1,52 @@
 ﻿@page "{Id:int}"
 @model RegistroEstudiantes.DetalleMateriaModel
-@{
-    ViewData["Title"] = "DetalleMateria";
-}
+@{ ViewData["Title"] = "DetalleMateria"; }
 
 @if (!string.IsNullOrEmpty(Model.Mensaje))
 {
-    <div class="alert alert-success" role="alert">
-        @Model.Mensaje
+<div class="alert alert-success" role="alert">
+    @Model.Mensaje
+</div>
+
+                <br />
+                                <br />}
+
+
+    <partial name="_ResumenMateria" model="@Model.Materia" />
+    <br />
+
+
+@*<h2>@Model.Materia.Nombre</h2>
+
+    <div>
+        <label style="font-weight:bold">Id:</label>
+        <br />
+        @Model.Materia.Id
     </div>
 
-    <br />
-    <br />
+    <div>
+        <label style="font-weight:bold">Codigo:</label>
+        <br />
+        @Model.Materia.Codigo
+    </div>
 
-}
+    <div>
+        <label style="font-weight:bold">Area</label>
+        <br />
+        @Model.Materia.Area
+    </div>
 
-<h2>@Model.Materia.Nombre</h2>
+    <div>
+        <label style="font-weight:bold">Disponible: </label>
+        <br />
+        @Model.Materia.Disponible
+    </div>
 
-<div>
-    <label style="font-weight:bold">Id:</label>
-    <br />
-    @Model.Materia.Id
-</div>
-
-<div>
-    <label style="font-weight:bold">Codigo:</label>
-    <br />
-    @Model.Materia.Codigo
-</div>
-
-<div>
-    <label style="font-weight:bold">Area</label>
-    <br />
-    @Model.Materia.Area
-</div>
-
-<div>
-    <label style="font-weight:bold">Disponible: </label>
-    <br />
-    @Model.Materia.Disponible
-</div>
-
-<div>
-    <label style="font-weight:bold">Objetivos: </label>
-    <br />
-    @Model.Materia.Objetivos
-</div>
+    <div>
+        <label style="font-weight:bold">Objetivos: </label>
+        <br />
+        @Model.Materia.Objetivos
+    </div>*@
 
 
 <a class="btn btn-primary" asp-page="./RegistroMaterias">Volver a Consulta</a>

@@ -1,0 +1,20 @@
+﻿@page "{Id:int}"
+@model RegistroEstudiantes.Pages.Estudiantes.EliminarModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Eliminar</title>
+</head>
+<body>
+    <form method="post">
+        Seguro que desea eliminar el estudiante @Model.Estudiante.Nombre
+        <button type="submit" class="btn btn-danger">Eliminar!</button>
+    </form>
+</body>
+</html>

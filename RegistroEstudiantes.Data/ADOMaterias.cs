@@ -215,7 +215,17 @@ namespace RegistroEstudiantes.Data
                 conn.Close();
               
                }
+
+        public Materia Eliminar(int id)
+        {
+            throw new NotImplementedException();
         }
+
+        public object GetTotalMateriasRegistradas()
+        {
+            throw new NotImplementedException();
+        }
+    }
     }
 
 

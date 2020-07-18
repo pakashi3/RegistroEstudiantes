@@ -203,5 +203,15 @@ namespace RegistroEstudiantes.Data
             conn.Close();
 
         }
+
+        public Estudiante Eliminar(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetTotalEstudaintesRegistrados()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

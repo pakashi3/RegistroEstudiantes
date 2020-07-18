@@ -1,19 +1,28 @@
 ﻿@page
 @model RegistroEstudiantes.Pages.RegistroMateriasModel
-@{
+@{ }
+
+@if (!string.IsNullOrEmpty(Model.MensajeEliminacion))
+{
+<label class="alert-info">@Model.MensajeEliminacion</label>}
+
+<form method="get">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="texto" asp-for="Texto">
+
+        <div class="input-group-append">
+            <button class="input-group-text" type="submit">Buscar</button>
+        </div>
+    </div>
+</form>
+
+@foreach(var materia in Model.Materias)
+{
+    <partial name="_ResumenMateria" model="materia"/>
+    <br/>
 }
 
-    <form method="get">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="texto" asp-for="Texto" >
-            
-            <div class="input-group-append">
-                <button class="input-group-text" type="submit">Buscar</button>
-            </div>
-        </div>
-    </form>
-
-    <table class="table">
+@*@<table class="table">
 
         <thead>
             <tr>
@@ -37,12 +46,12 @@
         <td> @materia.Disponible </td>
         <td> <a asp-page="./DetalleMateria" asp-route-Id="@materia.Id" class="btn btn-success" style="cursor:pointer">Ver detalle</a>  </td>
         <td> <a asp-page="./Editar" asp-route-Id="@materia.Id" class="btn btn-warning" style="cursor:pointer">Editar</a>  </td>
-    </tr>
-        }
+        <td> <a asp-page="./Eliminar" asp-route-Id="@materia.Id" class="btn btn-danger" style="cursor:pointer">Eliminar</a>  </td>
+    </tr>}
 
-    </table>
+    </table>*@
 
-<a asp-page="./Editar" class="btn btn-success">Crear Materia</a>
+    <a asp-page="./Editar" class="btn btn-success">Crear Materia</a>
 
-<h1> @Model.Mensaje </h1>
+    <h1> @Model.Mensaje </h1>
 

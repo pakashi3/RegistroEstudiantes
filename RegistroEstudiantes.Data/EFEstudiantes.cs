@@ -37,6 +37,13 @@ namespace RegistroEstudiantes.Data
             return estudiante;
         }
 
+        public Estudiante Eliminar(int id)
+        {
+            var estudiante = db.Estudiantes.Single(e => e.Id == id);
+            db.Estudiantes.Remove(estudiante);
+            return estudiante;
+        }
+
         public Estudiante GetEstudiantesPorId(int Id)
         {
             return this.db.Estudiantes.SingleOrDefault(n => n.Id == Id);
@@ -49,6 +56,11 @@ namespace RegistroEstudiantes.Data
                 texto = texto.ToLower();
             }
             return db.Estudiantes.Where(e => string.IsNullOrEmpty(texto) || e.Nombre.ToLower().Contains(texto)).OrderBy(e => e.Nombre).ToList();
+        }
+
+        public object GetTotalEstudaintesRegistrados()
+        {
+            return db.Estudiantes.Count();
         }
 
         public int GuardarCambios()

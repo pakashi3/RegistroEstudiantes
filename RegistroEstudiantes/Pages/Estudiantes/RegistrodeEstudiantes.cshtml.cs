@@ -19,6 +19,9 @@ namespace RegistroEstudiantes.Pages.Estudiantes
         [BindProperty(SupportsGet = true)]
         public string Texto { get; set; }
 
+        [TempData]
+        public string MensajeEliminacion { get; set; }
+
         public IList<Estudiante> Estudiantes { get; set; }
         
 
